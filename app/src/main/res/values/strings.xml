@@ -15,5 +15,7 @@
     <string name="entrar">Entrar</string>
     <string name="ingresa_usuario">Ingresa tu Usuario</string>
     <string name="ingresa_contraseña">Ingresa tu contraseña</string>
+    <string name="nuevo_usuario">Nuevo Usuario</string>
+
 
 </resources>

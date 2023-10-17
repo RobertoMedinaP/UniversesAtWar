@@ -33,9 +33,6 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }*/
 
         binding.btentrar.setOnClickListener {
             if (guardarDatos()) {
@@ -43,6 +40,13 @@ class FirstFragment : Fragment() {
                 findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             }
         }
+
+        binding.tvsincuenta.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_sinCuentaFragment)
+
+        }
+
+
     }
 
     override fun onDestroyView() {
