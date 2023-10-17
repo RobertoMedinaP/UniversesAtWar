@@ -33,13 +33,40 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
+        /*binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }*/
+
+        binding.btentrar.setOnClickListener {
+            if (guardarDatos()) {
+
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            }
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun guardarDatos(): Boolean{
+        val usuario= binding.textInputLayoutUsuario.editText?.text
+        val contraseña= binding.textInputLayoutContraseA.editText?.text
+        var valido=true
+
+
+
+        if (usuario.isNullOrEmpty()){
+            binding.textInputLayoutUsuario.editText?.error = "Ingrese su usuario"
+        }
+        valido=false
+
+        if (contraseña.isNullOrEmpty()){
+            binding.textInputLayoutContraseA.editText?.error = "Ingrese su contraseña"
+        }
+        valido=false
+        return valido
+
     }
 }
